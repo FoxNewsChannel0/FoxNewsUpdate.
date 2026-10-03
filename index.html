@@ -5,158 +5,1829 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="theme-color" content="#082f5f">
 <title>Fox News Channel</title>
+
 <style>
-:root{--b:#082f5f;--r:#d71920;--bg:#f3f5f8;--t:#17202a;--m:#667085}
-*{box-sizing:border-box}body{margin:0;font-family:Arial,Helvetica,sans-serif;background:var(--bg);color:var(--t)}
-button,input,textarea,select{font:inherit}button{cursor:pointer}.top{background:#061f3d;color:#fff;padding:7px 5%;display:flex;justify-content:space-between;font-size:12px}
-header{background:var(--b);color:#fff;padding:13px 5%;display:flex;justify-content:space-between;align-items:center;gap:15px;position:sticky;top:0;z-index:10;box-shadow:0 2px 10px #0003}
-.brand{display:flex;align-items:center;gap:10px}.logo{width:150px;height:55px;object-fit:contain;border-radius:5px;background:#fff}.brand h1{margin:0;font-size:25px}.brand small{color:#dbeafe}
-nav{display:flex;gap:5px;flex-wrap:wrap}nav button{background:transparent;border:0;color:#fff;padding:9px;border-radius:6px;font-weight:700}
-nav button:hover{background:#ffffff1c}.wa{background:#20b858!important;border-radius:22px!important}
-.hero{background:linear-gradient(135deg,#082f5f,#0b447f);color:#fff;padding:35px 5%;display:grid;grid-template-columns:1.5fr 1fr;gap:25px;align-items:center}
-.hero h2{font-size:clamp(30px,5vw,52px);line-height:1.02;margin:0 0 12px}.hero p{line-height:1.6;color:#e7eef8}
-.heroCard{background:#fff;color:var(--t);border-radius:14px;overflow:hidden}.heroCard img{width:100%;height:210px;object-fit:cover}.inside{padding:16px}
-.container{width:90%;max-width:1180px;margin:auto}.title{display:flex;justify-content:space-between;align-items:center;margin:28px 0 14px}.title h2{margin:0}
-.cats{display:flex;gap:8px;overflow:auto;padding-bottom:8px}.cats button{border:1px solid #ccd4dd;background:#fff;padding:8px 14px;border-radius:20px;white-space:nowrap}.cats .on{background:var(--b);color:#fff}
-.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;padding-bottom:35px}
-.fox-source{margin:14px 0 18px;background:#fff;border-left:5px solid var(--r);border-radius:10px;padding:14px 16px;display:flex;justify-content:space-between;align-items:center;gap:15px;box-shadow:0 5px 18px #0000000d}
-.fox-source strong{display:block;font-size:16px}.fox-source span{display:block;color:#667085;font-size:12px;margin-top:4px}
-.fox-source a{background:var(--b);color:#fff;text-decoration:none;padding:9px 13px;border-radius:7px;font-weight:700;white-space:nowrap}
-.fox-links{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin-bottom:24px}
-.fox-link{background:#fff;border-radius:10px;padding:14px;box-shadow:0 5px 18px #0000000d}
-.fox-link small{color:var(--r);font-weight:800}.fox-link h3{font-size:16px;margin:7px 0;line-height:1.3}
-.fox-link a{color:var(--b);font-weight:700;text-decoration:none}
-@media(max-width:600px){.fox-source{align-items:flex-start;flex-direction:column}.fox-links{grid-template-columns:1fr}}.card{background:#fff;border-radius:12px;overflow:hidden;box-shadow:0 7px 22px #00000012;display:flex;flex-direction:column}.card img{width:100%;height:190px;object-fit:cover}.body{padding:15px;display:flex;flex-direction:column;flex:1}.tag{font-size:11px;font-weight:800;color:var(--r);text-transform:uppercase;margin-bottom:6px}.card h3{margin:0 0 8px;font-size:19px}.card p{color:#586474;line-height:1.5;margin:0 0 12px}.meta{font-size:12px;color:var(--m);margin-top:auto}.read,.primary{border:0;background:var(--b);color:#fff;border-radius:7px;padding:10px 13px;font-weight:700;margin-top:12px}
-.admin{display:none;border-top:4px solid var(--r);background:#fff;padding:28px 0 45px}.panel{box-shadow:0 7px 22px #00000012;border-radius:13px;padding:20px}.note{background:#fff8e6;border:1px solid #f1d68a;padding:11px;border-radius:8px;font-size:13px;margin-bottom:17px}.form{display:grid;grid-template-columns:1fr 1fr;gap:14px}.field{display:flex;flex-direction:column;gap:6px}.full{grid-column:1/-1}.field label{font-weight:800;font-size:14px}.field input,.field textarea,.field select{border:1px solid #ccd4dd;border-radius:8px;padding:11px}.field textarea{min-height:180px;resize:vertical}.actions{display:flex;gap:9px;margin-top:15px}.primary{background:var(--r);margin:0}.secondary,.danger{border:0;border-radius:7px;padding:10px 14px;font-weight:700}.secondary{background:var(--b);color:#fff}.danger{background:#eef1f4}.list{margin-top:23px;border-top:1px solid #ddd}.item{display:flex;justify-content:space-between;gap:12px;padding:12px 0;border-bottom:1px solid #ddd}
-.modal{display:none;position:fixed;inset:0;background:#0009;z-index:50;align-items:center;justify-content:center;padding:18px}.box{background:#fff;width:min(570px,100%);padding:23px;border-radius:13px;position:relative;max-height:90vh;overflow:auto}.close{position:absolute;right:12px;top:8px;border:0;background:none;font-size:28px}.article img{width:100%;max-height:390px;object-fit:cover;border-radius:9px;margin:12px 0}.text{white-space:pre-wrap;line-height:1.8}.confirm{display:flex;justify-content:flex-end;gap:9px;margin-top:20px}
-footer{background:#061f3d;color:#d9e4f0;text-align:center;padding:27px 5%;font-size:13px;line-height:1.6}.toast{position:fixed;bottom:20px;left:50%;transform:translate(-50%,20px);background:#122333;color:#fff;padding:12px 17px;border-radius:8px;opacity:0;z-index:100;transition:.2s}.toast.show{opacity:1;transform:translate(-50%,0)}
-@media(max-width:850px){.hero{grid-template-columns:1fr}.grid{grid-template-columns:repeat(2,1fr)}}@media(max-width:600px){header{flex-wrap:wrap}.brand h1{font-size:19px}.logo{width:125px;height:45px}nav{width:100%}.grid{grid-template-columns:1fr}.form{grid-template-columns:1fr}.full{grid-column:auto}}
+:root{
+  --b:#082f5f;
+  --r:#d71920;
+  --bg:#f3f5f8;
+  --t:#17202a;
+  --m:#667085
+}
+
+*{box-sizing:border-box}
+
+body{
+  margin:0;
+  font-family:Arial,Helvetica,sans-serif;
+  background:var(--bg);
+  color:var(--t)
+}
+
+button,input,textarea,select{
+  font:inherit
+}
+
+button{
+  cursor:pointer
+}
+
+.top{
+  background:#061f3d;
+  color:#fff;
+  padding:7px 5%;
+  display:flex;
+  justify-content:space-between;
+  font-size:12px
+}
+
+header{
+  background:var(--b);
+  color:#fff;
+  padding:13px 5%;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:15px;
+  position:sticky;
+  top:0;
+  z-index:10;
+  box-shadow:0 2px 10px #0003
+}
+
+.brand{
+  display:flex;
+  align-items:center;
+  gap:10px
+}
+
+.logo{
+  width:150px;
+  height:55px;
+  object-fit:contain;
+  border-radius:5px;
+  background:#fff
+}
+
+.brand h1{
+  margin:0;
+  font-size:25px
+}
+
+.brand small{
+  color:#dbeafe
+}
+
+nav{
+  display:flex;
+  gap:5px;
+  flex-wrap:wrap
+}
+
+nav button{
+  background:transparent;
+  border:0;
+  color:#fff;
+  padding:9px;
+  border-radius:6px;
+  font-weight:700
+}
+
+nav button:hover{
+  background:#ffffff1c
+}
+
+.wa{
+  background:#20b858!important;
+  border-radius:22px!important
+}
+
+.hero{
+  background:linear-gradient(135deg,#082f5f,#0b447f);
+  color:#fff;
+  padding:35px 5%;
+  display:grid;
+  grid-template-columns:1.5fr 1fr;
+  gap:25px;
+  align-items:center
+}
+
+.hero h2{
+  font-size:clamp(30px,5vw,52px);
+  line-height:1.02;
+  margin:0 0 12px
+}
+
+.hero p{
+  line-height:1.6;
+  color:#e7eef8
+}
+
+.heroCard{
+  background:#fff;
+  color:var(--t);
+  border-radius:14px;
+  overflow:hidden
+}
+
+.heroCard img{
+  width:100%;
+  height:210px;
+  object-fit:cover
+}
+
+.inside{
+  padding:16px
+}
+
+.container{
+  width:90%;
+  max-width:1180px;
+  margin:auto
+}
+
+.title{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  margin:28px 0 14px
+}
+
+.title h2{
+  margin:0
+}
+
+.cats{
+  display:flex;
+  gap:8px;
+  overflow:auto;
+  padding-bottom:8px
+}
+
+.cats button{
+  border:1px solid #ccd4dd;
+  background:#fff;
+  padding:8px 14px;
+  border-radius:20px;
+  white-space:nowrap
+}
+
+.cats .on{
+  background:var(--b);
+  color:#fff
+}
+
+.grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:20px;
+  padding-bottom:35px
+}
+
+.fox-source{
+  margin:14px 0 18px;
+  background:#fff;
+  border-left:5px solid var(--r);
+  border-radius:10px;
+  padding:14px 16px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:15px;
+  box-shadow:0 5px 18px #0000000d
+}
+
+.fox-source strong{
+  display:block;
+  font-size:16px
+}
+
+.fox-source span{
+  display:block;
+  color:#667085;
+  font-size:12px;
+  margin-top:4px
+}
+
+.fox-source a{
+  background:var(--b);
+  color:#fff;
+  text-decoration:none;
+  padding:9px 13px;
+  border-radius:7px;
+  font-weight:700;
+  white-space:nowrap
+}
+
+.fox-links{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:12px;
+  margin-bottom:24px
+}
+
+.fox-link{
+  background:#fff;
+  border-radius:10px;
+  padding:14px;
+  box-shadow:0 5px 18px #0000000d
+}
+
+.fox-link small{
+  color:var(--r);
+  font-weight:800
+}
+
+.fox-link h3{
+  font-size:16px;
+  margin:7px 0;
+  line-height:1.3
+}
+
+.fox-link a{
+  color:var(--b);
+  font-weight:700;
+  text-decoration:none
+}
+
+.card{
+  background:#fff;
+  border-radius:12px;
+  overflow:hidden;
+  box-shadow:0 7px 22px #00000012;
+  display:flex;
+  flex-direction:column
+}
+
+.card img{
+  width:100%;
+  height:190px;
+  object-fit:cover
+}
+
+.body{
+  padding:15px;
+  display:flex;
+  flex-direction:column;
+  flex:1
+}
+
+.tag{
+  font-size:11px;
+  font-weight:800;
+  color:var(--r);
+  text-transform:uppercase;
+  margin-bottom:6px
+}
+
+.card h3{
+  margin:0 0 8px;
+  font-size:19px
+}
+
+.card p{
+  color:#586474;
+  line-height:1.5;
+  margin:0 0 12px
+}
+
+.meta{
+  font-size:12px;
+  color:var(--m);
+  margin-top:auto
+}
+
+.read,.primary{
+  border:0;
+  background:var(--b);
+  color:#fff;
+  border-radius:7px;
+  padding:10px 13px;
+  font-weight:700;
+  margin-top:12px
+}
+
+.admin{
+  display:none;
+  border-top:4px solid var(--r);
+  background:#fff;
+  padding:28px 0 45px
+}
+
+.panel{
+  box-shadow:0 7px 22px #00000012;
+  border-radius:13px;
+  padding:20px
+}
+
+.note{
+  background:#fff8e6;
+  border:1px solid #f1d68a;
+  padding:11px;
+  border-radius:8px;
+  font-size:13px;
+  margin-bottom:17px
+}
+
+.form{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:14px
+}
+
+.field{
+  display:flex;
+  flex-direction:column;
+  gap:6px
+}
+
+.full{
+  grid-column:1/-1
+}
+
+.field label{
+  font-weight:800;
+  font-size:14px
+}
+
+.field input,
+.field textarea,
+.field select{
+  border:1px solid #ccd4dd;
+  border-radius:8px;
+  padding:11px
+}
+
+.field textarea{
+  min-height:180px;
+  resize:vertical
+}
+
+.actions{
+  display:flex;
+  gap:9px;
+  margin-top:15px
+}
+
+.primary{
+  background:var(--r);
+  margin:0
+}
+
+.secondary,
+.danger{
+  border:0;
+  border-radius:7px;
+  padding:10px 14px;
+  font-weight:700
+}
+
+.secondary{
+  background:var(--b);
+  color:#fff
+}
+
+.danger{
+  background:#eef1f4
+}
+
+.list{
+  margin-top:23px;
+  border-top:1px solid #ddd
+}
+
+.item{
+  display:flex;
+  justify-content:space-between;
+  gap:12px;
+  padding:12px 0;
+  border-bottom:1px solid #ddd
+}
+
+.modal{
+  display:none;
+  position:fixed;
+  inset:0;
+  background:#0009;
+  z-index:50;
+  align-items:center;
+  justify-content:center;
+  padding:18px
+}
+
+.box{
+  background:#fff;
+  width:min(570px,100%);
+  padding:23px;
+  border-radius:13px;
+  position:relative;
+  max-height:90vh;
+  overflow:auto
+}
+
+.close{
+  position:absolute;
+  right:12px;
+  top:8px;
+  border:0;
+  background:none;
+  font-size:28px
+}
+
+.article img{
+  width:100%;
+  max-height:390px;
+  object-fit:cover;
+  border-radius:9px;
+  margin:12px 0
+}
+
+.text{
+  white-space:pre-wrap;
+  line-height:1.8
+}
+
+.confirm{
+  display:flex;
+  justify-content:flex-end;
+  gap:9px;
+  margin-top:20px
+}
+
+footer{
+  background:#061f3d;
+  color:#d9e4f0;
+  text-align:center;
+  padding:27px 5%;
+  font-size:13px;
+  line-height:1.6
+}
+
+.toast{
+  position:fixed;
+  bottom:20px;
+  left:50%;
+  transform:translate(-50%,20px);
+  background:#122333;
+  color:#fff;
+  padding:12px 17px;
+  border-radius:8px;
+  opacity:0;
+  z-index:100;
+  transition:.2s
+}
+
+.toast.show{
+  opacity:1;
+  transform:translate(-50%,0)
+}
+
+@media(max-width:850px){
+  .hero{
+    grid-template-columns:1fr
+  }
+
+  .grid{
+    grid-template-columns:repeat(2,1fr)
+  }
+}
+
+@media(max-width:600px){
+  header{
+    flex-wrap:wrap
+  }
+
+  .brand h1{
+    font-size:19px
+  }
+
+  .logo{
+    width:125px;
+    height:45px
+  }
+
+  nav{
+    width:100%
+  }
+
+  .grid{
+    grid-template-columns:1fr
+  }
+
+  .form{
+    grid-template-columns:1fr
+  }
+
+  .full{
+    grid-column:auto
+  }
+
+  .fox-source{
+    align-items:flex-start;
+    flex-direction:column
+  }
+
+  .fox-links{
+    grid-template-columns:1fr
+  }
+}
 </style>
 </head>
+
 <body>
-<div class="top"><span>Latest news and stories</span><span id="date"></span></div>
+
+<div class="top">
+  <span>Latest news and stories</span>
+  <span id="date"></span>
+</div>
+
 <header>
-<div class="brand"><img class="logo" src="images/logo.png" alt="Fox News Channel logo" onerror="window.fallback(this)"><div><h1>Fox News Channel</h1><small>News • Stories • Updates</small></div></div>
-<nav><button onclick="home()">Home</button><button class="wa" onclick="whatsapp()">WhatsApp</button></nav>
+
+  <div class="brand">
+
+    <img
+      class="logo"
+      src="./logo.png"
+      alt="Fox News Channel logo"
+      data-candidates='["./logo.png","images/logo.png","../logo.png"]'
+      data-try="0"
+      onerror="imageFallback(this)"
+    >
+
+    <div>
+      <h1>Fox News Channel</h1>
+      <small>News • Stories • Updates</small>
+    </div>
+
+  </div>
+
+  <nav>
+    <button onclick="home()">Home</button>
+    <button class="wa" onclick="emailBlogger()">Email</button>
+  </nav>
+
 </header>
 
+
 <section class="hero" id="homeTop">
-<div><h2>News that keeps you informed.</h2><p>Read the latest stories, updates and reports published by our bloggers.</p><button class="wa" onclick="whatsapp()">💬 Message a Blogger</button></div>
-<div class="heroCard" id="featured"></div>
+
+  <div>
+
+    <h2>News that keeps you informed.</h2>
+
+    <p>
+      Read the latest stories, updates and reports published by our bloggers.
+    </p>
+
+    <button class="wa" onclick="emailBlogger()">
+      📧 Email a Blogger
+    </button>
+
+  </div>
+
+  <div class="heroCard" id="featured"></div>
+
 </section>
+
 
 <main class="container">
-<div class="title"><h2>Latest News</h2><span id="count"></span></div>
-<div class="cats" id="cats"></div>
-<div class="fox-source">
-  <div><strong>Latest from Fox News</strong><span>Open the original story on the official Fox News website.</span></div>
-  <a href="https://www.foxnews.com/live-news/us-iran-war-flydubai-plane-trump-talks-10-02-26" target="_blank" rel="noopener noreferrer">Open Fox News Live →</a>
-</div>
-<div class="fox-links" id="foxLinks"></div>
-<div class="grid" id="grid"></div>
+
+  <div class="title">
+    <h2>Latest News</h2>
+    <span id="count"></span>
+  </div>
+
+  <div class="cats" id="cats"></div>
+
+
+  <div class="fox-source">
+
+    <div>
+      <strong>Latest from Fox News</strong>
+
+      <span>
+        Open the original story on the official Fox News website.
+      </span>
+    </div>
+
+    <a
+      href="https://www.foxnews.com/live-news/us-iran-war-flydubai-plane-trump-talks-10-02-26"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      Open Fox News Live →
+    </a>
+
+  </div>
+
+
+  <div class="fox-links" id="foxLinks"></div>
+
+  <div class="grid" id="grid"></div>
+
 </main>
 
+
 <section class="admin" id="adminSection">
-<div class="container">
-<div class="title"><h2>📝 Blogger / Admin</h2><button class="danger" onclick="hideAdmin()">Close</button></div>
-<div class="panel">
-<div class="note"><b>Image filenames:</b> put your pictures inside the <b>images</b> folder. Use one of these complete filenames: <b>logo.png</b>, <b>news1.jpg</b>, <b>news2.jpg</b>, <b>news3.jpg</b>, <b>news4.jpg</b>, <b>news5.jpg</b>, <b>news6.jpg</b>. You can also type another filename if you add that file to the folder.</div>
-<div class="form">
-<div class="field"><label>News headline *</label><input id="title" placeholder="Enter headline"></div>
-<div class="field"><label>Category *</label><select id="category"><option>World</option><option>Politics</option><option>Business</option><option>Technology</option><option>Sports</option><option>Entertainment</option><option>Health</option><option>Local News</option></select></div>
-<div class="field"><label>Blogger / Author</label><input id="author" placeholder="Blogger name"></div>
-<div class="field"><label>Complete image filename *</label><select id="imageFile"><option value="news1.jpg">news1.jpg</option><option value="news2.jpg">news2.jpg</option><option value="news3.jpg">news3.jpg</option><option value="news4.jpg">news4.jpg</option><option value="news5.jpg">news5.jpg</option><option value="news6.jpg">news6.jpg</option><option value="custom">Other filename...</option></select></div>
-<div class="field full" id="customWrap" style="display:none"><label>Other image filename</label><input id="customImage" placeholder="example.jpg"></div>
-<div class="field full"><label>News write-up *</label><textarea id="article" placeholder="Write the full news story here..."></textarea></div>
-</div>
-<div class="actions"><button class="primary" onclick="requestPublish()">PUBLISHED</button><button class="secondary" onclick="clearForm()">Clear Form</button></div>
-<div class="list" id="list"></div>
-</div></div>
+
+  <div class="container">
+
+    <div class="title">
+      <h2>📝 Blogger / Admin</h2>
+      <button class="danger" onclick="hideAdmin()">Close</button>
+    </div>
+
+    <div class="panel">
+
+      <div class="note">
+
+        <b>Image filenames:</b>
+
+        Put your pictures in the same folder as
+        <b>index.html</b>.
+
+        Recommended files:
+
+        <b>logo.png</b>,
+        <b>news1.jpg</b>,
+        <b>news2.jpg</b>,
+        <b>news3.jpg</b>,
+        <b>news4.jpg</b>,
+        <b>news5.jpg</b>,
+        <b>news6.jpg</b>.
+
+        You can also type another filename if you add that file
+        beside index.html.
+
+      </div>
+
+
+      <div class="form">
+
+        <div class="field">
+
+          <label>News headline *</label>
+
+          <input
+            id="title"
+            placeholder="Enter headline"
+          >
+
+        </div>
+
+
+        <div class="field">
+
+          <label>Category *</label>
+
+          <select id="category">
+
+            <option>World</option>
+            <option>Politics</option>
+            <option>Business</option>
+            <option>Technology</option>
+            <option>Sports</option>
+            <option>Entertainment</option>
+            <option>Health</option>
+            <option>Local News</option>
+
+          </select>
+
+        </div>
+
+
+        <div class="field">
+
+          <label>Blogger / Author</label>
+
+          <input
+            id="author"
+            placeholder="Blogger name"
+          >
+
+        </div>
+
+
+        <div class="field">
+
+          <label>Complete image filename *</label>
+
+          <select id="imageFile">
+
+            <option value="news1.jpg">news1.jpg</option>
+            <option value="news2.jpg">news2.jpg</option>
+            <option value="news3.jpg">news3.jpg</option>
+            <option value="news4.jpg">news4.jpg</option>
+            <option value="news5.jpg">news5.jpg</option>
+            <option value="news6.jpg">news6.jpg</option>
+            <option value="custom">Other filename...</option>
+
+          </select>
+
+        </div>
+
+
+        <div
+          class="field full"
+          id="customWrap"
+          style="display:none"
+        >
+
+          <label>Other image filename</label>
+
+          <input
+            id="customImage"
+            placeholder="example.jpg"
+          >
+
+        </div>
+
+
+        <div class="field full">
+
+          <label>News write-up *</label>
+
+          <textarea
+            id="article"
+            placeholder="Write the full news story here..."
+          ></textarea>
+
+        </div>
+
+      </div>
+
+
+      <div class="actions">
+
+        <button
+          class="primary"
+          onclick="requestPublish()"
+        >
+          PUBLISHED
+        </button>
+
+        <button
+          class="secondary"
+          onclick="clearForm()"
+        >
+          Clear Form
+        </button>
+
+      </div>
+
+
+      <div class="list" id="list"></div>
+
+    </div>
+
+  </div>
+
 </section>
 
-<div class="modal" id="confirmModal"><div class="box"><h2>Publish Article?</h2><p>Click OK to publish this article to this website, or Cancel to return to editing.</p><div class="confirm"><button class="danger" onclick="closeConfirm()">Cancel</button><button class="primary" onclick="publishNow()">OK, Publish</button></div></div></div>
-<div class="modal" id="articleModal"><div class="box article"><button class="close" onclick="closeArticle()">×</button><div id="articleView"></div></div></div>
+
+<div class="modal" id="confirmModal">
+
+  <div class="box">
+
+    <h2>Publish Article?</h2>
+
+    <p>
+      Click OK to publish this article to this website,
+      or Cancel to return to editing.
+    </p>
+
+    <div class="confirm">
+
+      <button
+        class="danger"
+        onclick="closeConfirm()"
+      >
+        Cancel
+      </button>
+
+      <button
+        class="primary"
+        onclick="publishNow()"
+      >
+        OK, Publish
+      </button>
+
+    </div>
+
+  </div>
+
+</div>
+
+
+<div class="modal" id="articleModal">
+
+  <div class="box article">
+
+    <button
+      class="close"
+      onclick="closeArticle()"
+    >
+      ×
+    </button>
+
+    <div id="articleView"></div>
+
+  </div>
+
+</div>
+
+
 <div class="toast" id="toast"></div>
 
-<footer><b>Fox News Channel</b><br>Independent news/blog website. Content is provided by the site's bloggers.</footer>
+
+<footer>
+
+  <b>Fox News Channel</b>
+
+  <br>
+
+  Independent news/blog website.
+  Content is provided by the site's bloggers.
+
+</footer>
+
 
 <script>
-/* ===================== YOUR SETTINGS ===================== */
-const WHATSAPP_NUMBER="17852151649";
 
-/* ===================== COMPLETE IMAGE FILENAMES =====================
-   Put these exact files in the images folder:
-   images/logo.png
-   images/news1.jpg
-   images/news2.jpg
-   images/news3.jpg
-   images/news4.jpg
-   images/news5.jpg
-   images/news6.jpg
-==================================================================== */
+/* =========================================================
+   EMAIL CONTACT
+========================================================= */
+
+const BLOGGER_EMAIL="jacksonnelson512@gmail.com";
+
+
+/* =========================================================
+   FOX NEWS LINKS
+========================================================= */
+
 const FOX_NEWS_LINKS=[
- {title:"Trump pledges to hit Iran 'very hard' if regime is behind FlyDubai suspected hijacking",label:"FOX NEWS LIVE",url:"https://www.foxnews.com/live-news/us-iran-war-flydubai-plane-trump-talks-10-02-26"},
- {title:"College football refs ruin another game, Paige Spiranac whips up some eggs & Tony Romo's next move",label:"FOX NEWS / OUTKICK",url:"https://www.foxnews.com/outkick-sports/college-football-refs-ruin-another-game-paige-spiranac-whips-eggs-tony-romo-next-move"}
+
+  {
+    title:"Trump pledges to hit Iran 'very hard' if regime is behind FlyDubai suspected hijacking",
+    label:"FOX NEWS LIVE",
+    url:"https://www.foxnews.com/live-news/us-iran-war-flydubai-plane-trump-talks-10-02-26"
+  },
+
+  {
+    title:"College football refs ruin another game, Paige Spiranac whips up some eggs & Tony Romo's next move",
+    label:"FOX NEWS / OUTKICK",
+    url:"https://www.foxnews.com/outkick-sports/college-football-refs-ruin-another-game-paige-spiranac-whips-eggs-tony-romo-next-move"
+  }
+
 ];
 
-const IMAGE_FILES=[
-  "images/news1.jpg","images/news2.jpg","images/news3.jpg",
-  "images/news4.jpg","images/news5.jpg","images/news6.jpg"
-];
 
-/* These built-in images make the sample news visible immediately.
-   Replace the JPG files in the images folder with your own pictures.
-*/
+/* =========================================================
+   SAMPLE NEWS
+========================================================= */
+
 const BUILTIN=[
- {id:"welcome",title:"This Content News will be published in 48 hours time ⏲️",category:"latest news to publish",author:"News Desk",image:"images/news1.jpg",article:"BREAKING: Serious Allegations Involving Stephenie Ann and 17-Year-Old Surface; Response Requested Within 24 Hours [USA] — Serious allegations concerning Stephenie Ann and alleged inappropriate communication with a 17-year-old have emerged. The allegations have not been independently verified, and no conclusion about wrongdoing should be drawn without appropriate investigation.       Stephenie Ann has been given an opportunity to respond to the allegations and provide her account of events. A response has been requested within 24 hours.    The matter may be referred to the appropriate authorities for investigation, particularly given the age of the person involved. Any further reporting should be based on verified evidence and official findings. ",date:new Date().toISOString()},
- {id:"ready",title:"News Is Ready",category:"latest news to publish",author:"News Desk",image:"images/news2.jpg",article:"IMPORTANT PRIVACY WARNING: Any private, intimate, or sexually explicit material involving an identifiable person should not be copied, forwarded, published, threatened with publication, or used to pressure or intimidate anyone. The fact that someone allegedly encountered such material does not give them permission to distribute it. Because the account involves a person who is reportedly 17, any sexually explicit material involving that person should not be possessed, requested, shared, or distributed; concerns involving a minor should instead be reported promptly to the appropriate authorities. Stephenie Ann should not be presumed responsible for any wrongdoing based solely on these claims. The circumstances surrounding the alleged incident remain subject to verification. Anyone who possesses potentially relevant evidence should preserve it securely and provide it to appropriate authorities rather than circulating private material online. Further reporting should distinguish clearly between allegations, responses, and independently verified facts.",date:new Date(Date.now()-3600000).toISOString()},
- {id:"story3",title:"Latest News Story",category:"latest news to publish",author:"News Desk",image:"images/news3.jpg",article:"Authorities are reportedly examining an alleged incident involving Mr. Alexander Marcus Reeds, following claims that he was attacked by a group of individuals. According to the unverified account being circulated, the individuals allegedly accessed a device or personal belongings during the incident and reportedly discovered private digital material involving Stephenie Ann. The nature, origin, ownership, and authenticity of any such material have not been independently established.  The reported incident has prompted questions about how the material was allegedly obtained and whether any private information was subsequently accessed, copied, or distributed without authorization.  Stephenie Ann has not been found responsible for any wrongdoing based solely on these claims. Likewise, the circumstances surrounding the alleged attack remain subject to verification.  Anyone with relevant evidence should preserve it and provide it to the appropriate authorities rather than sharing private or intimate material publicly. Further reporting should wait for independently verified information and official findings.",date:new Date(Date.now()-7200000).toISOString()}
+
+  {
+    id:"welcome",
+    title:"Welcome to Fox News Channel",
+    category:"World",
+    author:"News Desk",
+    image:"news1.jpg",
+    article:"Welcome to Fox News Channel. This sample story demonstrates the news layout. Replace it with your own report from the Blogger / Admin section.",
+    date:new Date().toISOString()
+  },
+
+  {
+    id:"ready",
+    title:"Your News Website Is Ready",
+    category:"Technology",
+    author:"News Desk",
+    image:"news2.jpg",
+    article:"This sample article shows how a second story appears. Add your own image filename and write-up from the Blogger / Admin section.",
+    date:new Date(Date.now()-3600000).toISOString()
+  },
+
+  {
+    id:"story3",
+    title:"Latest News Story",
+    category:"Business",
+    author:"News Desk",
+    image:"news3.jpg",
+    article:"This is a third sample story so the homepage contains several image positions.",
+    date:new Date(Date.now()-7200000).toISOString()
+  }
+
 ];
 
-const KEY="foxNewsArticlesV2";let pending=null,filter="All";
-function data(){try{let x=localStorage.getItem(KEY);return x?JSON.parse(x):BUILTIN}catch(e){return BUILTIN}}
-function imagePath(x){x=String(x||"").trim();if(!x)return "images/news1.jpg";return x.includes("/")?x:"images/"+x}
-function save(x){localStorage.setItem(KEY,JSON.stringify(x))}
-function esc(x){return String(x??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#039;"}[c]))}
-window.fallback=function(img){img.onerror=null;img.src="data:image/svg+xml;charset=UTF-8,"+encodeURIComponent("<svg xmlns='http://www.w3.org/2000/svg' width='900' height='500'><rect width='100%' height='100%' fill='#dfe5ec'/><text x='50%' y='50%' text-anchor='middle' font-family='Arial' font-size='30' fill='#667085'>Add image file</text></svg>")}
-function date(x){return new Date(x).toLocaleString([],{year:"numeric",month:"short",day:"numeric",hour:"numeric",minute:"2-digit"})}
+
+const KEY="foxNewsArticlesV2";
+
+let pending=null;
+let filter="All";
+
+
+/* =========================================================
+   GET DATA
+========================================================= */
+
+function data(){
+
+  try{
+
+    let x=localStorage.getItem(KEY);
+
+    if(x){
+
+      let parsed=JSON.parse(x);
+
+      if(Array.isArray(parsed) && parsed.length){
+
+        return parsed;
+
+      }
+
+    }
+
+  }catch(e){}
+
+  return BUILTIN.slice();
+
+}
+
+
+/* =========================================================
+   IMAGE SYSTEM
+   IMPORTANT:
+   1. Same folder as index.html
+   2. images/ folder
+   3. Parent folder
+========================================================= */
+
+function cleanImageName(x){
+
+  x=String(x||"").trim();
+
+  if(!x){
+
+    return "news1.jpg";
+
+  }
+
+  return x.split("/").pop();
+
+}
+
+
+function imagePath(x){
+
+  return "./"+cleanImageName(x);
+
+}
+
+
+function imageCandidates(x){
+
+  let n=cleanImageName(x);
+
+  return [
+
+    "./"+n,
+
+    "images/"+n,
+
+    "../"+n
+
+  ];
+
+}
+
+
+/* =========================================================
+   IMAGE FALLBACK
+========================================================= */
+
+function imageFallback(img){
+
+  try{
+
+    let list=JSON.parse(
+      img.dataset.candidates || "[]"
+    );
+
+    let i=
+      Number(img.dataset.try || 0)+1;
+
+    if(i<list.length){
+
+      img.dataset.try=String(i);
+
+      img.src=list[i];
+
+      return;
+
+    }
+
+  }catch(e){}
+
+  window.fallback(img);
+
+}
+
+
+/* =========================================================
+   FINAL IMAGE PLACEHOLDER
+========================================================= */
+
+window.fallback=function(img){
+
+  img.onerror=null;
+
+  img.src=
+    "data:image/svg+xml;charset=UTF-8,"+
+    encodeURIComponent(
+
+      "<svg xmlns='http://www.w3.org/2000/svg' width='900' height='500'>"+
+      "<rect width='100%' height='100%' fill='#dfe5ec'/>"+
+      "<text x='50%' y='50%' text-anchor='middle' "+
+      "font-family='Arial' font-size='30' fill='#667085'>"+
+      "Add image file"+
+      "</text>"+
+      "</svg>"
+
+    );
+
+};
+
+
+/* =========================================================
+   SAVE
+========================================================= */
+
+function save(x){
+
+  localStorage.setItem(
+    KEY,
+    JSON.stringify(x)
+  );
+
+}
+
+
+/* =========================================================
+   SECURITY / TEXT
+========================================================= */
+
+function esc(x){
+
+  return String(x??"").replace(
+
+    /[&<>"']/g,
+
+    c=>({
+
+      "&":"&amp;",
+      "<":"&lt;",
+      ">":"&gt;",
+      '"':"&quot;",
+      "'":"&#039;"
+
+    }[c])
+
+  );
+
+}
+
+
+/* =========================================================
+   DATE
+========================================================= */
+
+function date(x){
+
+  return new Date(x).toLocaleString([],
+    {
+      year:"numeric",
+      month:"short",
+      day:"numeric",
+      hour:"numeric",
+      minute:"2-digit"
+    }
+  );
+
+}
+
+
+/* =========================================================
+   FOX LINKS
+========================================================= */
+
 function renderFoxLinks(){
- const box=document.getElementById("foxLinks");
- box.innerHTML=FOX_NEWS_LINKS.map(x=>`<div class="fox-link"><small>${esc(x.label)}</small><h3>${esc(x.title)}</h3><a href="${esc(x.url)}" target="_blank" rel="noopener noreferrer">Read on Fox News →</a></div>`).join("");
+
+  const box=
+    document.getElementById("foxLinks");
+
+  box.innerHTML=
+    FOX_NEWS_LINKS.map(x=>`
+
+      <div class="fox-link">
+
+        <small>
+          ${esc(x.label)}
+        </small>
+
+        <h3>
+          ${esc(x.title)}
+        </h3>
+
+        <a
+          href="${esc(x.url)}"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Read on Fox News →
+        </a>
+
+      </div>
+
+    `).join("");
+
 }
+
+
+/* =========================================================
+   MAIN RENDER
+========================================================= */
+
 function render(){
- renderFoxLinks();
- let a=data().sort((x,y)=>new Date(y.date)-new Date(x.date)),f=filter==="All"?a:a.filter(x=>x.category===filter);
- let cats=["All",...new Set(a.map(x=>x.category))];
- document.getElementById("cats").innerHTML=cats.map(c=>`<button class="${filter===c?"on":""}" onclick="setFilter('${esc(c)}')">${esc(c)}</button>`).join("");
- document.getElementById("count").textContent=f.length+" "+(f.length===1?"story":"stories");
- document.getElementById("grid").innerHTML=f.length?f.map(card).join(""):`<div class="empty">No stories in this category.</div>`;
- if(a[0])document.getElementById("featured").innerHTML=`<img src="${esc(imagePath(a[0].image))}" onerror="window.fallback(this)"><div class="inside"><div class="tag">${esc(a[0].category)}</div><h3>${esc(a[0].title)}</h3><button class="read" onclick="openArticle('${esc(a[0].id)}')">Read Story</button></div>`;
- document.getElementById("list").innerHTML=a.map(x=>`<div class="item"><div><b>${esc(x.title)}</b><br><small>${esc(x.category)} • ${esc(date(x.date))}</small></div><button class="danger" onclick="del('${esc(x.id)}')">Delete</button></div>`).join("");
+
+  renderFoxLinks();
+
+
+  let a=data().sort(
+    (x,y)=>
+      new Date(y.date)-new Date(x.date)
+  );
+
+
+  let f=
+    filter==="All"
+    ? a
+    : a.filter(
+        x=>x.category===filter
+      );
+
+
+  let cats=[
+    "All",
+    ...new Set(
+      a.map(x=>x.category)
+    )
+  ];
+
+
+  document.getElementById("cats").innerHTML=
+
+    cats.map(c=>`
+
+      <button
+        class="${filter===c?"on":""}"
+        onclick="setFilter('${esc(c)}')"
+      >
+        ${esc(c)}
+      </button>
+
+    `).join("");
+
+
+  document.getElementById("count").textContent=
+
+    f.length+
+    " "+
+    (
+      f.length===1
+      ? "story"
+      : "stories"
+    );
+
+
+  document.getElementById("grid").innerHTML=
+
+    f.length
+
+    ? f.map(card).join("")
+
+    : `
+      <div class="empty">
+        No stories in this category.
+      </div>
+    `;
+
+
+  if(a[0]){
+
+    let candidates=
+      imageCandidates(a[0].image);
+
+    document.getElementById("featured").innerHTML=`
+
+      <img
+        src="${esc(imagePath(a[0].image))}"
+        data-candidates='${esc(JSON.stringify(candidates))}'
+        data-try="0"
+        onerror="imageFallback(this)"
+        alt=""
+      >
+
+      <div class="inside">
+
+        <div class="tag">
+          ${esc(a[0].category)}
+        </div>
+
+        <h3>
+          ${esc(a[0].title)}
+        </h3>
+
+        <button
+          class="read"
+          onclick="openArticle('${esc(a[0].id)}')"
+        >
+          Read Story
+        </button>
+
+      </div>
+
+    `;
+
+  }
+
+
+  document.getElementById("list").innerHTML=
+
+    a.map(x=>`
+
+      <div class="item">
+
+        <div>
+
+          <b>
+            ${esc(x.title)}
+          </b>
+
+          <br>
+
+          <small>
+            ${esc(x.category)}
+            •
+            ${esc(date(x.date))}
+          </small>
+
+        </div>
+
+        <button
+          class="danger"
+          onclick="del('${esc(x.id)}')"
+        >
+          Delete
+        </button>
+
+      </div>
+
+    `).join("");
+
 }
-function card(a){return `<article class="card"><img src="${esc(imagePath(a.image))}" alt="" onerror="window.fallback(this)"><div class="body"><div class="tag">${esc(a.category)}</div><h3>${esc(a.title)}</h3><p>${esc(a.article.slice(0,135))}${a.article.length>135?"...":""}</p><div class="meta">By ${esc(a.author||"News Desk")} • ${esc(date(a.date))}</div><button class="read" onclick="openArticle('${esc(a.id)}')">Read More</button></div></article>`}
-function setFilter(x){filter=x;render()}
-function openArticle(id){let a=data().find(x=>x.id===id);if(!a)return;document.getElementById("articleView").innerHTML=`<div class="tag">${esc(a.category)}</div><h2>${esc(a.title)}</h2><div class="meta">By ${esc(a.author||"News Desk")} • ${esc(date(a.date))}</div><img src="${esc(imagePath(a.image))}" onerror="window.fallback(this)"><div class="text">${esc(a.article)}</div><br><button class="wa" onclick="whatsapp()">💬 Contact a Blogger</button>`;document.getElementById("articleModal").style.display="flex"}
-function closeArticle(){document.getElementById("articleModal").style.display="none"}
-function admin(){document.getElementById("adminSection").style.display="block";document.getElementById("adminSection").scrollIntoView({behavior:"smooth"})}
-function hideAdmin(){document.getElementById("adminSection").style.display="none"}
-function home(){document.getElementById("homeTop").scrollIntoView({behavior:"smooth"})}
+
+
+/* =========================================================
+   NEWS CARD
+========================================================= */
+
+function card(a){
+
+  let candidates=
+    imageCandidates(a.image);
+
+  return `
+
+    <article class="card">
+
+      <img
+        src="${esc(imagePath(a.image))}"
+        alt=""
+        data-candidates='${esc(JSON.stringify(candidates))}'
+        data-try="0"
+        onerror="imageFallback(this)"
+      >
+
+      <div class="body">
+
+        <div class="tag">
+          ${esc(a.category)}
+        </div>
+
+        <h3>
+          ${esc(a.title)}
+        </h3>
+
+        <p>
+          ${esc(a.article.slice(0,135))}
+          ${a.article.length>135?"...":""}
+        </p>
+
+        <div class="meta">
+
+          By
+          ${esc(a.author||"News Desk")}
+          •
+          ${esc(date(a.date))}
+
+        </div>
+
+        <button
+          class="read"
+          onclick="openArticle('${esc(a.id)}')"
+        >
+          Read More
+        </button>
+
+      </div>
+
+    </article>
+
+  `;
+
+}
+
+
+/* =========================================================
+   FILTER
+========================================================= */
+
+function setFilter(x){
+
+  filter=x;
+
+  render();
+
+}
+
+
+/* =========================================================
+   OPEN ARTICLE
+========================================================= */
+
+function openArticle(id){
+
+  let a=
+    data().find(
+      x=>x.id===id
+    );
+
+  if(!a)return;
+
+
+  let candidates=
+    imageCandidates(a.image);
+
+
+  document.getElementById("articleView").innerHTML=`
+
+    <div class="tag">
+      ${esc(a.category)}
+    </div>
+
+    <h2>
+      ${esc(a.title)}
+    </h2>
+
+    <div class="meta">
+
+      By
+      ${esc(a.author||"News Desk")}
+      •
+      ${esc(date(a.date))}
+
+    </div>
+
+    <img
+      src="${esc(imagePath(a.image))}"
+      data-candidates='${esc(JSON.stringify(candidates))}'
+      data-try="0"
+      onerror="imageFallback(this)"
+      alt=""
+    >
+
+    <div class="text">
+      ${esc(a.article)}
+    </div>
+
+    <br>
+
+    <button
+      class="wa"
+      onclick="emailBlogger()"
+    >
+      📧 Contact a Blogger
+    </button>
+
+  `;
+
+
+  document.getElementById(
+    "articleModal"
+  ).style.display="flex";
+
+}
+
+
+/* =========================================================
+   CLOSE ARTICLE
+========================================================= */
+
+function closeArticle(){
+
+  document.getElementById(
+    "articleModal"
+  ).style.display="none";
+
+}
+
+
+/* =========================================================
+   ADMIN
+========================================================= */
+
+function admin(){
+
+  document.getElementById(
+    "adminSection"
+  ).style.display="block";
+
+  document.getElementById(
+    "adminSection"
+  ).scrollIntoView({
+    behavior:"smooth"
+  });
+
+}
+
+
+function hideAdmin(){
+
+  document.getElementById(
+    "adminSection"
+  ).style.display="none";
+
+}
+
+
+/* =========================================================
+   HOME
+========================================================= */
+
+function home(){
+
+  document.getElementById(
+    "homeTop"
+  ).scrollIntoView({
+    behavior:"smooth"
+  });
+
+}
+
+
+/* =========================================================
+   PUBLISH
+========================================================= */
+
 function requestPublish(){
- let title=document.getElementById("title").value.trim(),category=document.getElementById("category").value,author=document.getElementById("author").value.trim()||"News Desk",choice=document.getElementById("imageFile").value,image=choice==="custom"?document.getElementById("customImage").value.trim():choice,article=document.getElementById("article").value.trim();
- if(!title||!image||!article){toast("Enter the headline, image filename and news write-up.");return}
- pending={id:"article-"+Date.now(),title,category,author,image:imagePath(image),article,date:new Date().toISOString()};
- document.getElementById("confirmModal").style.display="flex";
+
+  let title=
+    document.getElementById("title")
+    .value.trim();
+
+
+  let category=
+    document.getElementById("category")
+    .value;
+
+
+  let author=
+    document.getElementById("author")
+    .value.trim()
+    ||
+    "News Desk";
+
+
+  let choice=
+    document.getElementById("imageFile")
+    .value;
+
+
+  let image=
+    choice==="custom"
+
+    ? document.getElementById("customImage")
+        .value.trim()
+
+    : choice;
+
+
+  let article=
+    document.getElementById("article")
+    .value.trim();
+
+
+  if(
+    !title ||
+    !image ||
+    !article
+  ){
+
+    toast(
+      "Enter the headline, image filename and news write-up."
+    );
+
+    return;
+
+  }
+
+
+  pending={
+
+    id:"article-"+Date.now(),
+
+    title:title,
+
+    category:category,
+
+    author:author,
+
+    image:cleanImageName(image),
+
+    article:article,
+
+    date:new Date().toISOString()
+
+  };
+
+
+  document.getElementById(
+    "confirmModal"
+  ).style.display="flex";
+
 }
-function closeConfirm(){pending=null;document.getElementById("confirmModal").style.display="none"}
-function publishNow(){if(!pending)return;let a=data();a.unshift(pending);save(a);closeConfirm();clearForm();render();home();toast("Article published successfully.")}
-function clearForm(){["title","author","customImage","article"].forEach(id=>document.getElementById(id).value="");document.getElementById("imageFile").value="news1.jpg";document.getElementById("customWrap").style.display="none"}
-function del(id){if(!confirm("Delete this article from this browser?"))return;save(data().filter(x=>x.id!==id));render();toast("Article deleted.")}
-function whatsapp(){let n=WHATSAPP_NUMBER.replace(/\D/g,"");if(!n||n.includes("XXXXXXXX")){toast("Add your WhatsApp number in the code first.");return}window.open("https://wa.me/"+n+"?text="+encodeURIComponent("Hello Fox News Channel, I would like to contact a blogger about a news story."),"_blank")}
-function toast(m){let t=document.getElementById("toast");t.textContent=m;t.classList.add("show");clearTimeout(window.tt);window.tt=setTimeout(()=>t.classList.remove("show"),2800)}
-document.getElementById("imageFile").addEventListener("change",e=>document.getElementById("customWrap").style.display=e.target.value==="custom"?"flex":"none");
-document.getElementById("date").textContent=new Date().toLocaleDateString([],{weekday:"short",year:"numeric",month:"short",day:"numeric"});
-window.addEventListener("click",e=>{if(e.target.id==="confirmModal")closeConfirm();if(e.target.id==="articleModal")closeArticle()});
+
+
+/* =========================================================
+   CLOSE CONFIRM
+========================================================= */
+
+function closeConfirm(){
+
+  pending=null;
+
+  document.getElementById(
+    "confirmModal"
+  ).style.display="none";
+
+}
+
+
+/* =========================================================
+   PUBLISH NOW
+========================================================= */
+
+function publishNow(){
+
+  if(!pending)return;
+
+
+  let a=data();
+
+
+  a.unshift(pending);
+
+
+  save(a);
+
+
+  closeConfirm();
+
+
+  clearForm();
+
+
+  render();
+
+
+  home();
+
+
+  toast(
+    "Article published successfully."
+  );
+
+}
+
+
+/* =========================================================
+   CLEAR FORM
+========================================================= */
+
+function clearForm(){
+
+  [
+    "title",
+    "author",
+    "customImage",
+    "article"
+  ].forEach(
+
+    id=>
+      document.getElementById(id).value=""
+
+  );
+
+
+  document.getElementById(
+    "imageFile"
+  ).value="news1.jpg";
+
+
+  document.getElementById(
+    "customWrap"
+  ).style.display="none";
+
+}
+
+
+/* =========================================================
+   DELETE ARTICLE
+========================================================= */
+
+function del(id){
+
+  if(
+    !confirm(
+      "Delete this article from this browser?"
+    )
+  ){
+
+    return;
+
+  }
+
+
+  save(
+    data().filter(
+      x=>x.id!==id
+    )
+  );
+
+
+  render();
+
+
+  toast(
+    "Article deleted."
+  );
+
+}
+
+
+/* =========================================================
+   EMAIL BLOGGER
+========================================================= */
+
+function emailBlogger(){
+
+  let subject=
+    "News Story Contact - Fox News Channel";
+
+
+  let body=
+    "Hello Fox News Channel,\n\n"+
+    "I would like to contact a blogger about a news story.";
+
+
+  window.location.href=
+    "mailto:"+
+    BLOGGER_EMAIL+
+    "?subject="+
+    encodeURIComponent(subject)+
+    "&body="+
+    encodeURIComponent(body);
+
+}
+
+
+/* =========================================================
+   TOAST
+========================================================= */
+
+function toast(m){
+
+  let t=
+    document.getElementById("toast");
+
+
+  t.textContent=m;
+
+
+  t.classList.add("show");
+
+
+  clearTimeout(window.tt);
+
+
+  window.tt=
+    setTimeout(
+      ()=>t.classList.remove("show"),
+      2800
+    );
+
+}
+
+
+/* =========================================================
+   IMAGE SELECT
+========================================================= */
+
+document.getElementById(
+  "imageFile"
+).addEventListener(
+  "change",
+  e=>{
+
+    document.getElementById(
+      "customWrap"
+    ).style.display=
+
+      e.target.value==="custom"
+      ? "flex"
+      : "none";
+
+  }
+);
+
+
+/* =========================================================
+   DATE
+========================================================= */
+
+document.getElementById(
+  "date"
+).textContent=
+
+  new Date().toLocaleDateString(
+    [],
+    {
+      weekday:"short",
+      year:"numeric",
+      month:"short",
+      day:"numeric"
+    }
+  );
+
+
+/* =========================================================
+   CLOSE MODALS WHEN BACKGROUND IS CLICKED
+========================================================= */
+
+window.addEventListener(
+  "click",
+  e=>{
+
+    if(
+      e.target.id==="confirmModal"
+    ){
+
+      closeConfirm();
+
+    }
+
+
+    if(
+      e.target.id==="articleModal"
+    ){
+
+      closeArticle();
+
+    }
+
+  }
+);
+
+
+/* =========================================================
+   START WEBSITE
+========================================================= */
+
 render();
+
 </script>
+
 </body>
 </html>
